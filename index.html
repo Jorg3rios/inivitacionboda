@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Boda Blanca y Jorge</title>
+    <style>
+     
+        body{
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        
+        font-style: normal;
+       
+        }
+        /* Estilos para hacer la imagen responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Para centrar la imagen */
+            cursor: pointer; /* Cambia el cursor al hacer hover sobre la imagen */
+        }
+
+        /* Estilos para la modal */
+        .modal {
+            display: none; /* Oculta la modal por defecto */
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para el botón de cerrar */
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilos para el mapa */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        .recepcion {
+            text-align: center;
+            color:#6e0505;
+            }
+        ol {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+    li {
+        margin-bottom: 10px;
+        }
+        .video{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Imagen -->
+    <img id="myImg" src="src/imagen1.jpg" alt="boda" title="boda Blanca y jorge">
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+    
+<div class="recepcion">
+    <h2>Recepcion</h2>
+    <p>Calle Hermenegildo Galeana #106<br>
+    <p>San Antonio Acahualco, Zinacantepec</p>
+    <p>Estado de México, C.P: 51380</p>
+    <br>
+    <p><strong>Por queremos pasarla increíble este día te pedimos:</strong></p>
+        <ol>
+            <li>Ir de buen humor y con ganas de divertirte.</li>
+            <li> Si no vas a misa no hay recuerdo.</li>
+            <li>Ir con mucho animo bailador.</li>
+            <li> No ir mas guapa que la novia, ni mas guapo que el novio.</li>
+            <li>Si no sabes bailar, copiale al de a lado. Ah!! y nada de que se me hizo tarde</li>
+        </ol>
+        
+</div> <!-- Mapa -->
+<div id="map"></div>
+<a href=" https://waze.com/ul?ll=19.276975,-99.776779&navigate=yes"><img src="src/waze.png" alt=""></a>
+<iframe class="video" src="https://www.youtube.com/embed/-LkmFwYvyd8" title="Foster The People - Imagination
+(Sub. Español)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<script>
+    // Inicializa el mapa19.27698500182924, -99.7771118565816
+    function initMap() {
+        var myLatLng = {lat: 19.27698500182924, lng: -99.7771118565816}; // Coordenadas de ejemplo (Sydney, Australia)
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: '¡Aquí estamos!'
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9aVLAiU92Rm7vTXwV8zCccUAwyVBLtuc&callback=initMap" async defer></script>
+
+<script>
+        // Obtiene los elementos de la imagen y la modal
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+
+        // Abre la modal cuando se hace clic en la imagen
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        // Cierra la modal cuando se hace clic en la 'x'
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>     
