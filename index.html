@@ -99,10 +99,24 @@
       height: 50px; /* Ajusta el tamaño según tus necesidades */
       margin-right: 10px; /* Ajusta el espaciado entre los iconos */
     }
+    .audio-container {
+      text-align: center;
+      margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    }
+
+    audio {
+      max-width: 100%;
+      width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+    }
     </style>
 </head>
 <body>
-
+    <div class="audio-container">
+        <audio controls>
+          <source src="src/music.mp3" type="audio/mp3">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </div>
     <!-- Imagen -->
     <img id="myImg" src="src/imagen1.jpg" alt="boda" title="boda Blanca y jorge">
 
